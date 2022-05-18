@@ -1,0 +1,20 @@
+<launch>
+    <arg name="config_path" default = "$(find vins)/../config/lifelongSLAM/d400_imu_config.yaml" />
+	  <arg name="vins_path" default = "$(find vins)/../config/../" />
+    
+	<!-- BAG -->
+    <arg name="bag_path" default="/media/why/新加卷/cafe/" />
+	<arg name="bag_file" default="cafe-1-2-all.bag" />
+	<node pkg="rosbag" type="play" name="rosbag" args="$(arg bag_path)/$(arg bag_file)" output="log"/>
+
+	<!-- RVIZ -->
+    <node name="rvizvisualisation" pkg="rviz" type="rviz" output="log" args="-d $(find vins)/../config/vins_rviz_config.rviz" />
+
+	<!-- VINS-Fusion Estimator -->
+    <node name="plsl_slam" pkg="vins" type="vins_node_sysIMU" args=" $(arg config_path)" output="log">
+    </node>
+
+    <node name="loop_fusion" pkg="loop_fusion" type="loop_fusion_node" args=" $(arg config_path)" output="screen">
+    </node>
+
+</launch>

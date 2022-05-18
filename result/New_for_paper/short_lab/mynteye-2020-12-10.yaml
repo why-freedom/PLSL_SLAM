@@ -1,0 +1,6 @@
+image: /home/why/SLAM_WS/catagrapher/src/result/mynteye-2020-12-10.pgm
+resolution: 0.05
+origin: [-74.7723, -26.5422, 0.0]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

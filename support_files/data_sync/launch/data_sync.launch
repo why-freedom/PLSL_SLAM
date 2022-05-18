@@ -1,0 +1,5 @@
+<launch>
+<arg name="bag_filename" default="../../"/>
+<node pkg="data_sync" type="data_sync_node" name="data_sync_node" output="screen"/>
+<node pkg="rosbag" type="record" name="record" output="screen" args="-o $(arg bag_filename) /sync/pointcloud /sync/image"/>
+</launch>
