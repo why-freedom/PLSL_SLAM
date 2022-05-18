@@ -7,7 +7,7 @@
 
 # 使用:参考vins-fusion或者直接用./run.sh
 
-
+# 博客地址: https://blog.csdn.net/weixin_42344264/article/details/119221397?spm=1001.2014.3001.5502
 
 
 # VINS-Fusion
